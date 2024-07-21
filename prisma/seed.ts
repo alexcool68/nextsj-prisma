@@ -19,6 +19,23 @@ const initialPosts: Prisma.PostCreateInput[] = [
                 }
             }
         }
+    },
+    {
+        title: 'Post 02',
+        slug: 'slug-02',
+        content: 'content',
+        published: true,
+        author: {
+            connectOrCreate: {
+                where: {
+                    email: 'john@gmail.com'
+                },
+                create: {
+                    email: 'john@gmail.com',
+                    password: 'alexis'
+                }
+            }
+        }
     }
 ];
 
